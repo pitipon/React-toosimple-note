@@ -7,6 +7,11 @@ class App extends Component {
     notes: ['Note1','Note2','Note3']
   }
 
+  // lifecycle of React 
+  componentDidMount() {
+    this.noteInput.focus()
+  }
+
   addNote = (e) => {
     console.log(1231312131,e)
     if(e.key === 'Enter') {
@@ -22,7 +27,7 @@ class App extends Component {
         </ul>
         <input  type="text"
                 onKeyUp={this.addNote}
-                ref={input => }/>
+                ref={input => this.noteInput = input}/>
       </div>
     )
   }
